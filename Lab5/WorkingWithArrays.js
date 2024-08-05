@@ -58,7 +58,6 @@ export default function WorkingWithArrays(app) {
       res.status(404).json({ message: `Unable to delete Todo with ID ${id}` });
       return;
     }
-
     todos.splice(todoIndex, 1);
     res.sendStatus(200);
   });
