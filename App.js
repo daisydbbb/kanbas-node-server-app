@@ -18,6 +18,7 @@ import session from "express-session";
 // mongoose.connect(CONNECTION_STRING);
 
 const app = express();
+app.use(cors());
 // app.use(
 //   cors({
 //     credentials: true,
