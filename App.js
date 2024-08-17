@@ -2,10 +2,7 @@ import express from "express";
 import Hello from "./Hello.js";
 import Lab5 from "./Lab5/index.js";
 import cors from "cors";
-// import CourseRoutes from "./Kanbas/Courses/routes.js";
-// import ModuleRoutes from "./Kanbas/Modules/routes.js";
 import AssignmentRoutes from "./Kanbas/Assignments/routes.js";
-// import QuizzRoutes from "./Kanbas/Quizzes/routes.js";
 import mongoose from "mongoose";
 import "dotenv/config";
 import UserRoutes from "./Users/routes.js";
@@ -13,7 +10,6 @@ import CourseRoutes from "./Courses/routes.js";
 import ModuleRoutes from "./Modules/routes.js";
 import QuizRoutes from "./Quizzes/routes.js";
 import QuestionRoutes from "./Questions/routes.js";
-// import QuestionRoutes from "./Kanbas/Questions/routes.js";
 import session from "express-session";
 
 const CONNECTION_STRING =
@@ -21,7 +17,6 @@ const CONNECTION_STRING =
 mongoose.connect(CONNECTION_STRING);
 
 const app = express();
-// app.use(cors());
 app.use(
   cors({
     credentials: true,
