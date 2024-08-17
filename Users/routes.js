@@ -59,13 +59,15 @@ export default function UserRoutes(app) {
     req.session.destroy();
     res.sendStatus(200);
   };
+
   const profile = async (req, res) => {
     const currentUser = req.session["currentUser"];
     if (!currentUser) {
       res.sendStatus(401);
       return;
     }
-    res.json(currentUser);
+    const updatedUser = await dao.findUserById(currentUser._id);
+    res.json(updatedUser);
   };
 
   app.post("/api/users", createUser);

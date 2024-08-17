@@ -5,12 +5,15 @@ import cors from "cors";
 // import CourseRoutes from "./Kanbas/Courses/routes.js";
 // import ModuleRoutes from "./Kanbas/Modules/routes.js";
 import AssignmentRoutes from "./Kanbas/Assignments/routes.js";
-import QuizzRoutes from "./Kanbas/Quizzes/routes.js";
+// import QuizzRoutes from "./Kanbas/Quizzes/routes.js";
 import mongoose from "mongoose";
 import "dotenv/config";
 import UserRoutes from "./Users/routes.js";
 import CourseRoutes from "./Courses/routes.js";
 import ModuleRoutes from "./Modules/routes.js";
+import QuizRoutes from "./Quizzes/routes.js";
+import QuestionRoutes from "./Questions/routes.js";
+// import QuestionRoutes from "./Kanbas/Questions/routes.js";
 import session from "express-session";
 
 const CONNECTION_STRING =
@@ -44,7 +47,8 @@ app.use(express.json());
 CourseRoutes(app);
 ModuleRoutes(app);
 AssignmentRoutes(app);
-QuizzRoutes(app);
+QuizRoutes(app);
+QuestionRoutes(app);
 UserRoutes(app);
 Lab5(app);
 Hello(app);

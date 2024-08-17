@@ -7,8 +7,15 @@ export default function CourseRoutes(app) {
   };
 
   const createCourse = async (req, res) => {
-    const course = await dao.createCourse(req.body);
-    res.json(course);
+    try {
+      const course = await dao.createCourse(req.body);
+      res.json(course);
+    } catch (error) {
+      console.error("Error creating course:", error);
+      res
+        .status(500)
+        .json({ message: "Error creating course", error: error.message });
+    }
   };
 
   const deleteCourse = async (req, res) => {
