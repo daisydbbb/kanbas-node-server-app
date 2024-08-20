@@ -33,6 +33,9 @@ const quizSchema = new mongoose.Schema(
     webcam: Boolean,
     lock_after_answer: Boolean,
     question_number: Number,
+    access_code: String,
+    lockdown_browser: Boolean,
+    view_quiz: Boolean,
   },
   { collection: "quizzes" }
 );

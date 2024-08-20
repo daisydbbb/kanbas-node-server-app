@@ -9,6 +9,7 @@ const courseSchema = new mongoose.Schema(
     credits: Number,
     description: String,
     enrolled: Boolean,
+    creator: String,
   },
   { collection: "courses" }
 );
